@@ -9,7 +9,7 @@ public class ChessPosition {
 	
 	public ChessPosition(char coluna, int linha) {
 		if (coluna < 'a' || coluna > 'h' || linha < 1 || linha > 8) {
-			throw new ChessException("Error instantiating ChessPosition. Valid values are from a1 to h8.");
+			throw new ChessException("Erro ao instanciar a posição do xadrez. Os valores válidos são de a1 a h8.");
 		}
 		this.coluna = coluna;
 		this.linha = linha;
