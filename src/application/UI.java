@@ -49,6 +49,9 @@ public class UI {
 		printCapturedPieces(captured);
 		System.out.println("Vez : " + chessMatch.getTurn());
 		System.out.println("Esperando jogador: " + chessMatch.getCurrentPlayer());
+		if (chessMatch.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
@@ -79,10 +82,12 @@ public class UI {
 		}
 		if (piece == null) {
 			System.out.print("-" + ANSI_RESET);
-		} else {
+		} 
+		else {
 			if (piece.getColor() == Color.WHITE) {
 				System.out.print(ANSI_WHITE + piece + ANSI_RESET);
-			} else {
+			} 
+			else {
 				System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
 			}
 		}
