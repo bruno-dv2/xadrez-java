@@ -22,7 +22,7 @@ public class Queen extends ChessPiece {
 
 		Position p = new Position(0, 0);
 
-		// above
+		// acima
 		p.setValues(position.getLinha() - 1, position.getColuna());
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
@@ -32,7 +32,7 @@ public class Queen extends ChessPiece {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// left
+		// esquerda
 		p.setValues(position.getLinha(), position.getColuna() - 1);
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
@@ -42,7 +42,7 @@ public class Queen extends ChessPiece {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// right
+		// direita
 		p.setValues(position.getLinha(), position.getColuna() + 1);
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
@@ -52,7 +52,7 @@ public class Queen extends ChessPiece {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// below
+		// abaixo
 		p.setValues(position.getLinha() + 1, position.getColuna());
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;

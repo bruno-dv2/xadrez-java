@@ -89,7 +89,7 @@ public class ChessMatch {
 
 		ChessPiece movedPiece = (ChessPiece) board.piece(target);
 
-		// #specialmove promotion
+		// #promoção de movimento especial
 		promoted = null;
 		if (movedPiece instanceof Pawn) {
 			if ((movedPiece.getColor() == Color.WHITE && target.getLinha() == 0)

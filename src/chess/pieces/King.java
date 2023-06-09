@@ -36,25 +36,25 @@ public class King extends ChessPiece {
 
 		Position p = new Position(0, 0);
 
-		// above
+		// acima
 		p.setValues(position.getLinha() - 1, position.getColuna());
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// below
+		// abaixo
 		p.setValues(position.getLinha() + 1, position.getColuna());
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// left
+		// esquerda
 		p.setValues(position.getLinha(), position.getColuna() - 1);
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// right
+		// direita
 		p.setValues(position.getLinha(), position.getColuna() + 1);
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
@@ -84,9 +84,10 @@ public class King extends ChessPiece {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		// #specialmove castling
+		// #movimento especial castling
 		if (getMoveCount() == 0 && !chessMatch.getCheck()) {
-			// #specialmove castling kingside rook
+			
+			// #movimento especial de roque na ala do rei torre
 			Position posT1 = new Position(position.getLinha(), position.getColuna() + 3);
 			if (testRookCastling(posT1)) {
 				Position p1 = new Position(position.getLinha(), position.getColuna() + 1);
@@ -95,7 +96,7 @@ public class King extends ChessPiece {
 					mat[position.getLinha()][position.getColuna() + 2] = true;
 				}
 			}
-			// #specialmove castling queenside rook
+			// #movimento especial roque da ala da rainha torre
 			Position posT2 = new Position(position.getLinha(), position.getColuna() - 4);
 			if (testRookCastling(posT2)) {
 				Position p1 = new Position(position.getLinha(), position.getColuna() - 1);
